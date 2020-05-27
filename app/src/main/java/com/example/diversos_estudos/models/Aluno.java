@@ -2,7 +2,9 @@ package com.example.diversos_estudos.models;
 
 import androidx.annotation.NonNull;
 
-public class Aluno {
+import java.io.Serializable;
+
+public class Aluno implements Serializable {
     public Long getId() {
         return id;
     }
