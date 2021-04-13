@@ -1,6 +1,5 @@
-package com.example.diversos_estudos;
+package com.example.mobile_schorgan;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,9 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.diversos_estudos.DAO.AlunoDAO;
-import com.example.diversos_estudos.models.Aluno;
+import com.example.mobile_schorgan.DAO.AlunoDAO;
+import com.example.mobile_schorgan.models.Aluno;
 
 import java.util.List;
 
@@ -28,13 +26,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listaminha = (ListView) findViewById(R.id.my_list); //ac!ha a view pelo id, referencia o componente
+        listaminha = (ListView) findViewById(R.id.my_list);
 
         listaminha.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> lista, View TextView, int position, long id) {
                 Aluno aluno = (Aluno) listaminha.getItemAtPosition(position);
-                Toast.makeText(MainActivity.this, "Aluno " + aluno.getNome() + "clicado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Aluno " + aluno.getNome() + " clicado", Toast.LENGTH_SHORT).show();
+                Intent gotoForm = new Intent(MainActivity.this,FormularioActivity.class);
+                gotoForm.putExtra("aluno",aluno); // passa o objeto para a outra activity com uma identificação.
+                startActivity(gotoForm); // starta a activity com a intetion
             }
         });
 
@@ -63,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         List<Aluno> alunos = dao.buscaAlunos();
         dao.close();
 
-        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this, android.R.layout.simple_list_item_1, alunos); // instancia um array adaptado para a view
-        listaminha.setAdapter(adapter); // faz o vinculo entre o que está sendo passado array adapter e manda para a view, junção do texto q tá sendo montado com a view
+        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this, android.R.layout.simple_list_item_1, alunos);
+        listaminha.setAdapter(adapter);
     }
 
     @Override
@@ -74,15 +75,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, final ContextMenu.ContextMenuInfo menuInfo) { // menu de contexto para a lista
-        MenuItem deletar = menu.add("Deletar"); // adiciona um elemento na lista como menu
+    public void onCreateContextMenu(ContextMenu menu, View v, final ContextMenu.ContextMenuInfo menuInfo) {
+        MenuItem deletar = menu.add("Deletar");
         deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                // contextmenuinfo será de um adapter
                 AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
 
-                Aluno aluno = (Aluno) listaminha.getItemAtPosition(info.position); // devolve a posição que o usuario clicou para o objeto
+                Aluno aluno = (Aluno) listaminha.getItemAtPosition(info.position);
                 AlunoDAO dao = new AlunoDAO(MainActivity.this);
 
                 dao.deletar(aluno); // excluir aluno especifico

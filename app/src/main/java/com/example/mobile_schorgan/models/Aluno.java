@@ -1,4 +1,4 @@
-package com.example.diversos_estudos.models;
+package com.example.mobile_schorgan.models;
 
 import androidx.annotation.NonNull;
 

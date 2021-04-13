@@ -1,4 +1,4 @@
-package com.example.diversos_estudos;
+package com.example.mobile_schorgan;
 
 import org.junit.Test;
 
