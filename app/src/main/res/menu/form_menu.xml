@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.diversos_estudos.FormularioActivity">
+    tools:context="com.example.mobile_schorgan.FormularioActivity">
 
     <item android:id="@+id/menu_main_ok"
         android:title="Ok"
