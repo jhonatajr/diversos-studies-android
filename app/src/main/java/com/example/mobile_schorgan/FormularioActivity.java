@@ -17,6 +17,7 @@ public class FormularioActivity extends AppCompatActivity {
 
     private FormularioHelper form;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
