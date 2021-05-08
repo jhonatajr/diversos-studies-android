@@ -7,41 +7,330 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="7dp"
         android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/formulario_nome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nome" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textColor="@color/preto"
+            android:textSize="15dp"
 
-    <EditText
-        android:id="@+id/formulario_endereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Endereço" />
+            >
 
-    <EditText
-        android:id="@+id/formulario_tel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Telefone" />
+        </TextView>
 
-    <EditText
-        android:id="@+id/formulario_site"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Site" />
-
-    <androidx.appcompat.widget.AppCompatRatingBar
-        android:id="@+id/formulario_avaliacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:max="10" />
+        <EditText
+            android:id="@+id/formulario_nome"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@color/input"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+             android:padding="5dp"
 
 
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Telefone"
+            android:textColor="@color/preto"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/formulario_tel"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@color/input"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+             android:padding="5dp"
+
+            />
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-mail"
+            android:textColor="@color/preto"
+            android:textSize="15dp"
+
+            ></TextView>
+
+        <EditText
+            android:id="@+id/formulario_email"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@color/input"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+             android:padding="5dp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="80dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Endereço"
+                android:textColor="@color/preto"
+                android:textSize="15dp"
+
+
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/my_custom_background"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Logradouro"
+                        android:textColor="@color/preto"
+                        android:textSize="15dp"
+
+                        ></TextView>
+
+                    <EditText
+                        android:id="@+id/formulario_logradouro"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/input"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                         android:padding="5dp"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número"
+                        android:textColor="@color/preto"
+                        android:textSize="15dp"
+
+                        ></TextView>
+
+                    <EditText
+                        android:id="@+id/formulario_numero_endereco"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/input"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                         android:padding="5dp"
+
+
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Complemento"
+                    android:textColor="@color/preto"
+                    android:textSize="15dp"
+
+                    ></TextView>
+
+                <EditText
+                    android:id="@+id/formulario_complemento"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/input"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15.5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bairro"
+                        android:textColor="@color/preto"
+                        android:textSize="15dp"
+
+                        ></TextView>
+
+                    <EditText
+                        android:id="@+id/formulario_bairro"
+                        android:layout_width="145dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/input"
+                        android:inputType="textCapWords"
+                        android:maxLength="40"
+                        android:maxLines="1"
+                         android:padding="5dp"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CEP"
+                        android:textColor="@color/preto"
+                        android:textSize="15dp"
+
+                        ></TextView>
+
+                    <EditText
+                        android:id="@+id/formulario_cep"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/input"
+                        android:inputType="text|number"
+                        android:maxLength="9"
+                        android:maxLines="1"
+                         android:padding="5dp"
+
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cidade"
+                        android:textColor="@color/preto"
+                        android:textSize="15dp"
+
+
+                        ></TextView>
+
+                    <EditText
+                        android:id="@+id/formulario_cidade"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/input"
+                        android:inputType="textCapWords"
+                        android:maxLength="50"
+                        android:maxLines="1"
+                         android:padding="5dp"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UF"
+                        android:textColor="@color/preto"
+                        android:textSize="15dp"
+
+                        ></TextView>
+
+                    <EditText
+                        android:id="@+id/formulario_uf"
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/input"
+                        android:inputType="textCapWords"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:padding="5dp"
+
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
-</ScrollView >
+
+</ScrollView>

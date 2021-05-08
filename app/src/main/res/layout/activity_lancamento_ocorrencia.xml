@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarInfo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/toolbarInfo">
+        <TextView
+            android:id="@+id/proxOcorrencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:padding="2dp">
+
+        </TextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Titulo"
+                android:textColor="@color/preto"
+                android:textSize="15dp"
+                >
+            </TextView>
+            <EditText
+                android:id="@+id/formulario_titulo"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@color/input"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:padding= "5dp"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cliente"
+                android:textColor="@color/preto"
+                android:textSize="15dp"
+                >
+            </TextView>
+            <Spinner
+                android:id="@+id/spinnercliente"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gravidade"
+                android:textColor="@color/preto"
+                android:textSize="15dp"
+                >
+            </TextView>
+            <Spinner
+                android:id="@+id/spinnerGravidade"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data ocorrência"
+                android:textColor="@color/preto"
+                android:textSize="15dp"
+                >
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/formulario_dataocorrencia"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/input"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:padding= "5dp"
+                    android:layout_marginRight="5dp"
+                    />
+                <ImageButton
+                    android:id="@+id/datePickerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_calendar_today_24"
+                    android:padding="5dp">
+                </ImageButton>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descrição"
+                android:textColor="@color/preto"
+                android:textSize="15dp"
+                >
+            </TextView>
+            <EditText
+                android:id="@+id/formulario_descricao"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding= "5dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/input"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="2000"
+                android:maxLines="4" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+

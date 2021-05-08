@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_gallery">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.mobile_schorgan.ui.clientes.ClientesFragment"
+        android:label="Clientes"
+        tools:layout="@layout/fragment_clientes" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.mobile_schorgan.ui.ocorrencias.OcorrenciasFragment"
+        android:label="Ocorrencias"
+        tools:layout="@layout/fragment_ocorrencias" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.mobile_schorgan.SettingsFragment"
+        android:label="Configurações"
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>

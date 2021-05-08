@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:id="@+id/layout_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Ícone de entregar ou delivery -->
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:id="@+id/iconLogo"
+            android:src="@drawable/group">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_dados"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.75"
+        android:orientation="vertical">
+
+        <!-- Código do Rol -->
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:textSize="15.5dp"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <!-- Nome do cliente -->
+    </LinearLayout>
+</LinearLayout>

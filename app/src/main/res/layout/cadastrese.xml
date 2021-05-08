@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="35dp"
+    android:layout_marginLeft="35dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_schorgan_foreground"
+        android:layout_gravity="center">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/lblmsg1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome:" />
+
+    <EditText
+        android:id="@+id/txtNomeCad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        />
+
+    <TextView
+        android:id="@+id/lblmsg2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-mail:" />
+
+    <EditText
+        android:id="@+id/txtEmailCad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/lblmsg3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Senha:" />
+
+    <EditText
+        android:id="@+id/txtSenhaCad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/lblmsg4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirma Senha:" />
+
+    <EditText
+        android:id="@+id/txtConfSenhaCad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar" />
+</LinearLayout>
