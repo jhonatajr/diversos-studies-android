@@ -20,12 +20,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TABELA_CLIENTES = "create table IF NOT EXISTS clientes"
             + "(clienteid INTEGER PRIMARY KEY AUTOINCREMENT, datacadastro date, nome text, telefone text , cpf text, cnpj text," +
-            "email text, logradouro text, cep text, complemento text , bairro text, cidade text," +
+            "email text, logradouro text, cep text, complemento text , bairro text, cidade text, cancelado text," +
             "uf CHARACTER(2), numero int)";
 
     private static final String TABELA_OCORRENCIAS = "create table IF NOT EXISTS ocorrencia"
             + "(ocrrenciaid INTEGER PRIMARY KEY AUTOINCREMENT, datalancamento date, dataocorrencia date," +
-            " descricao text, titulo text , gravidade text, clienteid int, tipoid int)";
+            " descricao text, titulo text , gravidade text, clienteid int, tipoid int, cancelado text)";
 
 
     private static final String TABELA_TIPOS = "create table IF NOT EXISTS tipo"
@@ -71,6 +71,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return instance;
     }
+
+
 
     @Override
     public synchronized void close () {

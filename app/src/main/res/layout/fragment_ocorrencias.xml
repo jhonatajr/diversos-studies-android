@@ -32,7 +32,9 @@
             android:id="@+id/dataInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp">
+            android:layout_marginLeft="93dp"
+            android:textSize="13dp"
+            android:textColor="#000000">
         </TextView>
     </LinearLayout>
 

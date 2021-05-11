@@ -53,6 +53,14 @@ public class OcorrenciaDAO extends AbstractDAO {
         return str;
     }
 
+    public void deletar(Ocorrencia ocorrencia) {
+        String[] params = {Integer.toString(ocorrencia.getId())};
+        ContentValues dados = pegaDados(ocorrencia, false);
+        dados.put("cancelado", "S");
+        db.update("ocorrencia", dados, "ocrrenciaid = ?", params);
+    }
+
+
 
     public List<Ocorrencia> montaPonteiro(Cursor ponteiro) {
         List<Ocorrencia> ocorrencias = new ArrayList<Ocorrencia>();
@@ -71,13 +79,13 @@ public class OcorrenciaDAO extends AbstractDAO {
         return ocorrencias;
     }
     public List<Ocorrencia> consultaOcorrencias() {
-        String sql = "SELECT * FROM ocorrencia order by dataocorrencia ASC;";
+        String sql = "SELECT * FROM ocorrencia where cancelado is null order by dataocorrencia ASC;";
         Cursor ponteiro = db.rawQuery(sql, null);
         return montaPonteiro(ponteiro);
     }
 
     public List<Ocorrencia> consultaOcorrenciasPorData(String date) {
-        String sql = "SELECT * FROM ocorrencia where dataocorrencia = '" +  date+" 00:00:00'";
+        String sql = "SELECT * FROM ocorrencia where cancelado is null and dataocorrencia = '" +  date+" 00:00:00'";
         Cursor ponteiro = db.rawQuery(sql, null);
         return montaPonteiro(ponteiro);
     }

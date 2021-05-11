@@ -47,10 +47,8 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                android:background="@color/input"
                 android:inputType="textCapWords"
                 android:maxLines="1"
-                android:padding= "5dp"
 
                 />
             <TextView
@@ -98,10 +96,8 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:background="@color/input"
                     android:inputType="none"
                     android:maxLines="1"
-                    android:padding= "5dp"
                     android:layout_marginRight="5dp"
                     />
                 <ImageButton
@@ -109,7 +105,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_calendar_today_24"
-                    android:padding="5dp">
+                    android:background="@color/toolbarInfo"
+                    android:padding="1dp">
                 </ImageButton>
             </LinearLayout>
             <TextView
@@ -125,9 +122,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding= "5dp"
                 android:layout_marginBottom="12dp"
-                android:background="@color/input"
                 android:inputType="textCapSentences|textMultiLine"
                 android:maxLength="2000"
                 android:maxLines="4" />

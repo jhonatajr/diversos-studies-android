@@ -3,7 +3,9 @@ package com.example.mobile_schorgan.ui.ocorrencias;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -13,8 +15,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
@@ -35,6 +39,8 @@ public class OcorrenciasFragment extends Fragment {
     private DatePickerDialog datePickerDialog;
     private Calendar c;
     private TextView textInfo;
+    private int positionOcorrencia;
+    private SwitchCompat switchData;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -54,13 +60,14 @@ public class OcorrenciasFragment extends Fragment {
         listOcorrencia.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> listaminha, View item, int position, long id) {
+                positionOcorrencia = position;
                 return false;
             }
         });
 
         textInfo = root.findViewById(R.id.dataInfo);
         carregaOcorrencias();
-        SwitchCompat switchData = root.findViewById(R.id.switchData);
+         switchData = root.findViewById(R.id.switchData);
         switchData.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -87,6 +94,7 @@ public class OcorrenciasFragment extends Fragment {
                 }
                 else {
                     textInfo.setText("Todos");
+                    switchData.setChecked(false);
                     carregaOcorrencias();
                 }
             }
@@ -100,8 +108,16 @@ public class OcorrenciasFragment extends Fragment {
             }
         });
 
+        registerForContextMenu(listOcorrencia);
 
         return root;
+    }
+
+    @Override
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
+        menu.add("Alterar");
+        menu.add("Deletar");
+        super.onCreateContextMenu(menu, v, menuInfo);
     }
 
     private void carregaOcorrencias() {
@@ -128,5 +144,30 @@ public class OcorrenciasFragment extends Fragment {
     public void onResume() {
         carregaOcorrencias();
         super.onResume();
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        if (item.getTitle() == "Alterar") {
+            Ocorrencia ocorrencia = (Ocorrencia) listOcorrencia.getItemAtPosition(positionOcorrencia);
+            Intent gotoForm = new Intent(getActivity(), OcorrenciaFormularioActivity.class);
+            gotoForm.putExtra("ocorrencia", ocorrencia);
+            startActivity(gotoForm);
+            return super.onContextItemSelected(item);
+
+        }
+        else if (item.getTitle() == "Deletar") {
+            Ocorrencia ocorrencia = (Ocorrencia) listOcorrencia.getItemAtPosition(positionOcorrencia);
+            OcorrenciaDAO dao = new OcorrenciaDAO(getContext());
+            dao.deletar(ocorrencia);
+            String msg = "Ocorrencia deletada com sucesso";
+            Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
+
+        }
+        if (textInfo.getText().toString() != "Todos") {
+            switchData.setChecked(false);
+        }
+        carregaOcorrencias();
+        return super.onContextItemSelected(item);
     }
 }

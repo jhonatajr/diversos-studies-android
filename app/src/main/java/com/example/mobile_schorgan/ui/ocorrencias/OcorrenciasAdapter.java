@@ -73,7 +73,9 @@ public class  OcorrenciasAdapter extends BaseAdapter {
             textCli.setText(cliente.getNome());
         }
         textTitulo.setText(ocorrencia.getTitulo());
-        textData.setText(Mask.parseDateGet(ocorrencia.getDataOcorrencia()));
+        if (ocorrencia.getDataOcorrencia() != null) {
+            textData.setText(Mask.parseDateGet(ocorrencia.getDataOcorrencia()));
+        }
 
 
         return convertView;

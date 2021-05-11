@@ -8,11 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="7dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="3dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Nome"
             android:textColor="@color/preto"
             android:textSize="15dp"
@@ -26,13 +28,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:background="@color/input"
             android:inputType="textCapWords"
-            android:maxLines="1"
-             android:padding="5dp"
-
-
-            />
+            android:maxLines="1" />
 
         <TextView
             android:layout_width="match_parent"
@@ -48,12 +45,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:background="@color/input"
             android:inputType="textCapWords"
-            android:maxLines="1"
-             android:padding="5dp"
-
-            />
+            android:maxLines="1" />
 
 
         <TextView
@@ -70,12 +63,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:background="@color/input"
             android:inputType="textCapWords"
-            android:maxLines="1"
-             android:padding="5dp"
-
-            />
+            android:maxLines="1" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -131,12 +120,8 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:background="@color/input"
                         android:inputType="textCapWords"
-                        android:maxLines="1"
-                         android:padding="5dp"
-
-                        />
+                        android:maxLines="1" />
 
                 </LinearLayout>
 
@@ -159,13 +144,8 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:background="@color/input"
                         android:inputType="textCapWords"
-                        android:maxLines="1"
-                         android:padding="5dp"
-
-
-                        />
+                        android:maxLines="1" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -189,11 +169,9 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:background="@color/input"
                     android:inputType="textCapWords"
                     android:maxLines="1"
-                    android:padding="5dp"
-                    />
+                    android:padding="5dp" />
 
             </LinearLayout>
 
@@ -222,13 +200,9 @@
                         android:layout_width="145dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:background="@color/input"
                         android:inputType="textCapWords"
                         android:maxLength="40"
-                        android:maxLines="1"
-                         android:padding="5dp"
-
-                        />
+                        android:maxLines="1" />
 
                 </LinearLayout>
 
@@ -251,13 +225,9 @@
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:background="@color/input"
                         android:inputType="text|number"
                         android:maxLength="9"
-                        android:maxLines="1"
-                         android:padding="5dp"
-
-                        />
+                        android:maxLines="1" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -288,13 +258,9 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:background="@color/input"
                         android:inputType="textCapWords"
                         android:maxLength="50"
-                        android:maxLines="1"
-                         android:padding="5dp"
-
-                        />
+                        android:maxLines="1" />
 
                 </LinearLayout>
 
@@ -317,13 +283,9 @@
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
-                        android:background="@color/input"
                         android:inputType="textCapWords"
                         android:maxLength="2"
-                        android:maxLines="1"
-                        android:padding="5dp"
-
-                        />
+                        android:maxLines="1" />
 
                 </LinearLayout>
 
