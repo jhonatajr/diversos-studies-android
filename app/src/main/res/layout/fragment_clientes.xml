@@ -4,12 +4,41 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".ui.clientes.ClientesFragment">
+    tools:context=".ui.clientes.ClientesFragment"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_custom_normal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        >
 
+        <EditText
+            android:id="@+id/edtBusca"
+            android:layout_width="0dip"
+            android:layout_height="32dp"
+            android:layout_weight="0.9"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_busca"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="6dp"
+            android:hint="Pesquise pelo nome.."
+            android:inputType="textFilter"
+            android:textSize="14sp" >
+        </EditText>
+
+    </LinearLayout>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/my_list"/>
+        android:id="@+id/my_list"
+        android:layout_marginTop="47dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/main_salvar"
@@ -21,6 +50,7 @@
         android:layout_marginBottom="16dp"
         android:elevation="6dp"
         android:stateListAnimator="@null"
+        android:backgroundTint="#A349A4"
         android:src="@drawable/ic_baseline_add_24white"
         >
 

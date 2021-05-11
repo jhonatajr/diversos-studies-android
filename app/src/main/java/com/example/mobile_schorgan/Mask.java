@@ -3,6 +3,7 @@ package com.example.mobile_schorgan;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
@@ -93,6 +94,16 @@ public class Mask {
             e.printStackTrace();
         }
         return str;
+    }
+
+    public static void configuraAlert(AlertDialog alert) {
+        alert.show();
+        Button nbutton = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
+        nbutton.setBackgroundColor(Color.TRANSPARENT);
+        nbutton.setTextColor(Color.BLACK);
+        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+        pbutton.setBackgroundColor(Color.TRANSPARENT);
+        pbutton.setTextColor(Color.BLACK);
     }
 
 

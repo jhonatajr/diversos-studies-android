@@ -43,9 +43,9 @@ public class ClienteDialog extends Dialog implements View.OnClickListener {
         textEmail = findViewById(R.id.emailCliente);
         textTelefone = findViewById(R.id.telefoneCliente);
         textRua = findViewById(R.id.logradouroCliente);
-        textBairro = findViewById(R.id.bairroCliente);
         textCEP = findViewById(R.id.cepCliente);
         textBairro = findViewById(R.id.bairroCliente);
+        textCidade = findViewById(R.id.cidadeCliente);
 
 
         ImageButton buttonCancel = findViewById(R.id.fechar);
@@ -78,8 +78,8 @@ public class ClienteDialog extends Dialog implements View.OnClickListener {
         if (logradouro != null)
             textRua.setText(logradouro);
 
-//        if (cliente.getCidade() != null)
-//            textCidade.setText(cliente.getCidade());
+       if (cliente.getCidade() != null)
+            textCidade.setText(cliente.getCidade());
 
     }
 

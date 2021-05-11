@@ -1,7 +1,10 @@
 package com.example.mobile_schorgan.ui.ocorrencias;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -23,6 +26,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.mobile_schorgan.DAO.OcorrenciaDAO;
+import com.example.mobile_schorgan.Mask;
 import com.example.mobile_schorgan.OcorrenciaFormularioActivity;
 import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Ocorrencia;
@@ -32,6 +36,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class OcorrenciasFragment extends Fragment {
 
@@ -89,6 +95,16 @@ public class OcorrenciasFragment extends Fragment {
                             carregaOcorrenciasDia(c.getTime());
                         }
                     }, day, month, year);
+                    datePickerDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancelar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (which == DialogInterface.BUTTON_NEGATIVE) {
+                                textInfo.setText("Todos");
+                                switchData.setChecked(false);
+                                carregaOcorrencias();
+                            }
+                        }
+                    });
                     datePickerDialog.updateDate(year, month, day);
                     datePickerDialog.show();
                 }
@@ -157,12 +173,31 @@ public class OcorrenciasFragment extends Fragment {
 
         }
         else if (item.getTitle() == "Deletar") {
-            Ocorrencia ocorrencia = (Ocorrencia) listOcorrencia.getItemAtPosition(positionOcorrencia);
-            OcorrenciaDAO dao = new OcorrenciaDAO(getContext());
-            dao.deletar(ocorrencia);
-            String msg = "Ocorrencia deletada com sucesso";
-            Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
-
+            AlertDialog.Builder b = new AlertDialog.Builder(getContext(),android.R.style.ThemeOverlay_Material_Dialog_Alert);
+            b.setTitle("Deletar");
+            b.setMessage("Deseja deletar mesmo a ocorrencia?");
+            b.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Ocorrencia ocorrencia = (Ocorrencia) listOcorrencia.getItemAtPosition(positionOcorrencia);
+                    OcorrenciaDAO dao = new OcorrenciaDAO(getContext());
+                    dao.deletar(ocorrencia);
+                    String msg = "Ocorrencia deletada com sucesso";
+                    Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
+                    if (textInfo.getText().toString() != "Todos") {
+                        switchData.setChecked(false);
+                    }
+                    carregaOcorrencias();
+                }
+            });
+            b.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int p) {
+                    dialogInterface.dismiss();
+                }
+            });
+            AlertDialog alert = b.create();
+            Mask.configuraAlert(alert);
         }
         if (textInfo.getText().toString() != "Todos") {
             switchData.setChecked(false);

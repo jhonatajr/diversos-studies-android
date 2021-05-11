@@ -27,7 +27,7 @@
             android:layout_width="47dp"
             android:layout_height="47dp"
             android:id="@+id/iconLogo"
-            android:src="@drawable/group">
+            android:src="@drawable/ic_baseline_account_circle_24">
 
         </ImageView>
 

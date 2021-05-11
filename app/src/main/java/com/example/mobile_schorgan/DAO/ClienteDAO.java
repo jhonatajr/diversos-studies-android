@@ -74,6 +74,29 @@ public class ClienteDAO extends AbstractDAO {
         return cliente;
     }
 
+    public List<Cliente> montaClientePorNome(CharSequence s) {
+        String sql = "SELECT * FROM clientes where nome LIKE '" + s + "%'";
+        Cursor ponteiro = db.rawQuery(sql, null);
+        List<Cliente> clientes = new ArrayList<Cliente>();
+        while (ponteiro.moveToNext()) {
+            Cliente cliente = new Cliente();
+            cliente.setId(ponteiro.getInt(ponteiro.getColumnIndex("clienteid")));
+            cliente.setNome(ponteiro.getString(ponteiro.getColumnIndex("nome")));
+            cliente.setEmail(ponteiro.getString(ponteiro.getColumnIndex("email")));
+            cliente.setTelefone(ponteiro.getString(ponteiro.getColumnIndex("telefone")));
+            cliente.setBairro(ponteiro.getString(ponteiro.getColumnIndex("bairro")));
+            cliente.setCidade(ponteiro.getString(ponteiro.getColumnIndex("cidade")));
+            cliente.setLogradouro(ponteiro.getString(ponteiro.getColumnIndex("logradouro")));
+            cliente.setNumero(ponteiro.getInt(ponteiro.getColumnIndex("numero")));
+            cliente.setUf(ponteiro.getString(ponteiro.getColumnIndex("uf")));
+            cliente.setCep(ponteiro.getString(ponteiro.getColumnIndex("cep")));
+            cliente.setComplemento(ponteiro.getString(ponteiro.getColumnIndex("complemento")));
+            clientes.add(cliente);
+        }
+        ponteiro.close();
+        return clientes;
+    }
+
 
     public List<Cliente> buscaClientes() {
         String sql = "SELECT * FROM clientes where cancelado is NULL;";

@@ -60,13 +60,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
             }
         });
         AlertDialog alert = b.create();
-        alert.show();
-        Button nbutton = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
-        nbutton.setBackgroundColor(Color.TRANSPARENT);
-        nbutton.setTextColor(Color.BLACK);
-        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-        pbutton.setBackgroundColor(Color.TRANSPARENT);
-        pbutton.setTextColor(Color.BLACK);
+        Mask.configuraAlert(alert);
     }
 
 }
