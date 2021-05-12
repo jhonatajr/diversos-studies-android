@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.mobile_schorgan.ui.clientes.ClientesFragment;
 import com.example.mobile_schorgan.ui.ocorrencias.OcorrenciasFragment;
@@ -34,6 +36,11 @@ public class MenuNavActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView textUsuario = headerView.findViewById(R.id.usuarioLogin);
+        SharedPreferences sharedPref = getSharedPreferences("Login", MODE_PRIVATE);
+        String login = sharedPref.getString("login", "");
+        textUsuario.setText("Olá, " + login);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setDrawerLayout(drawer)

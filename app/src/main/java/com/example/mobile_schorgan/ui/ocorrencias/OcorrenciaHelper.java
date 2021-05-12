@@ -1,12 +1,15 @@
-package com.example.mobile_schorgan;
+package com.example.mobile_schorgan.ui.ocorrencias;
 
 import android.app.Activity;
 import android.text.InputType;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.mobile_schorgan.Mask;
+import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Cliente;
 import com.example.mobile_schorgan.models.Ocorrencia;
+import com.example.mobile_schorgan.ui.ocorrencias.OcorrenciaFormularioActivity;
 
 public class OcorrenciaHelper {
 

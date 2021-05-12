@@ -25,8 +25,10 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
 
-        ViewGroup exportaBase = root.findViewById(R.id.sair);
-        exportaBase.setOnClickListener(this);
+        ViewGroup sair = root.findViewById(R.id.sair);
+        ViewGroup sobre = root.findViewById(R.id.sobre);
+        sair.setOnClickListener(this);
+        sobre.setOnClickListener(this);
 
         return root;
 
@@ -37,6 +39,11 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.sair:
                 sair();
+                break;
+            case R.id.sobre:
+                Intent intent = new Intent(getActivity(), SobreActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 

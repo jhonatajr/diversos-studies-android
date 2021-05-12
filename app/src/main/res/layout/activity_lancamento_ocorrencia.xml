@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarInfo"
@@ -33,7 +34,8 @@
             android:orientation="vertical"
             android:layout_marginTop="10dp"
             android:paddingLeft="20dp"
-            android:padding="15dp">
+            android:padding="15dp"
+            android:layout_margin="20dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +46,7 @@
             </TextView>
             <EditText
                 android:id="@+id/formulario_titulo"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:inputType="textCapWords"
@@ -61,7 +63,7 @@
             </TextView>
             <Spinner
                 android:id="@+id/spinnercliente"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown"/>
@@ -75,7 +77,7 @@
             </TextView>
             <Spinner
                 android:id="@+id/spinnerGravidade"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown"/>
@@ -119,7 +121,7 @@
             </TextView>
             <EditText
                 android:id="@+id/formulario_descricao"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginBottom="12dp"

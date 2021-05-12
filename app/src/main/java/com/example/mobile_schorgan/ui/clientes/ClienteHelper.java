@@ -1,7 +1,9 @@
-package com.example.mobile_schorgan;
+package com.example.mobile_schorgan.ui.clientes;
 
 import android.widget.EditText;
 
+import com.example.mobile_schorgan.Mask;
+import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Cliente;
 
 

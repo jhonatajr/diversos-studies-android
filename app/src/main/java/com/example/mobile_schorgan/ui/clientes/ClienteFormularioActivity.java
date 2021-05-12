@@ -1,4 +1,4 @@
-package com.example.mobile_schorgan;
+package com.example.mobile_schorgan.ui.clientes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -12,7 +12,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.mobile_schorgan.DAO.ClienteDAO;
+import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Cliente;
+import com.example.mobile_schorgan.ui.clientes.ClienteHelper;
 
 public class ClienteFormularioActivity extends AppCompatActivity {
 

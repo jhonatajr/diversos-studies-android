@@ -1,4 +1,4 @@
-package com.example.mobile_schorgan;
+package com.example.mobile_schorgan.ui.ocorrencias;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,6 +22,8 @@ import android.widget.Toast;
 
 import com.example.mobile_schorgan.DAO.ClienteDAO;
 import com.example.mobile_schorgan.DAO.OcorrenciaDAO;
+import com.example.mobile_schorgan.Helper;
+import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Cliente;
 import com.example.mobile_schorgan.models.Ocorrencia;
 
@@ -117,6 +118,7 @@ public class OcorrenciaFormularioActivity extends AppCompatActivity  {
         else {
             OcorrenciaDAO ocorrenciaDAO = new OcorrenciaDAO(this);
             int proxOcorrencia = ocorrenciaDAO.getLastId();
+
             toolbarOcorrencia = toolbarOcorrencia + " " + proxOcorrencia;
             ocorrenciaDAO.close();
          }

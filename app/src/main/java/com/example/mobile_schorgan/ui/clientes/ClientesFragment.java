@@ -11,19 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.mobile_schorgan.DAO.ClienteDAO;
-import com.example.mobile_schorgan.ClienteFormularioActivity;
-import com.example.mobile_schorgan.OcorrenciaFormularioActivity;
 import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Cliente;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

@@ -25,6 +25,13 @@ public class UsuarioDAO extends AbstractDAO {
 
    }
 
+   public String devolveUsuario(String email) {
+       String sql = "SELECT * FROM usuarios where email = '" + email + "'";
+       Cursor ponteiro = db.rawQuery(sql, null);
+       ponteiro.moveToFirst();
+       return ponteiro.getString(ponteiro.getColumnIndex("nome"));
+   }
+
    public void cadastraUsuario(String nome, String email, String senha) {
        ContentValues valores = new ContentValues();
        valores.put("nome", nome);

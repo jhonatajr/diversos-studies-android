@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_schorgan_white_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ocorrencias.OcorrenciasDetailActivity"></activity>
+        <activity android:name=".SobreActivity"></activity>
+        <activity android:name=".ui.ocorrencias.OcorrenciasDetailActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +22,10 @@
             android:name=".MenuNavActivity"
             android:label="@string/title_activity_menu_nav"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".OcorrenciaFormularioActivity" />
-        <activity android:name=".ClienteFormularioActivity" />
+        <activity android:name=".ui.ocorrencias.OcorrenciaFormularioActivity" />
+        <activity android:name=".ui.clientes.ClienteFormularioActivity" />
         <activity android:name=".CadastroUsuarioActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>

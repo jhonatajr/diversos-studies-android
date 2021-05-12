@@ -2,19 +2,15 @@ package com.example.mobile_schorgan.ui.clientes;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.example.mobile_schorgan.ClienteFormularioActivity;
 import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Cliente;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ClienteDialog extends Dialog implements View.OnClickListener {
 

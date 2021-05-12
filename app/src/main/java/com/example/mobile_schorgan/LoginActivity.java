@@ -54,8 +54,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         boolean validaLogin = dao.validaLogin(Login, SenhaLogin);
 
         if(validaLogin){
+            String usuario = dao.devolveUsuario(Login);
             SharedPreferences.Editor editor = getSharedPreferences("Login", MODE_PRIVATE).edit();
-            editor.putString("login", Login);
+            editor.putString("login", usuario);
             editor.apply();
             Intent tela = new Intent(this, MenuNavActivity.class);
             startActivity(tela);

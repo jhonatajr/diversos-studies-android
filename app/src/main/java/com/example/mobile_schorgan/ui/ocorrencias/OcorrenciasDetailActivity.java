@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +15,10 @@ import android.widget.TextView;
 
 import com.example.mobile_schorgan.DAO.ClienteDAO;
 import com.example.mobile_schorgan.Mask;
-import com.example.mobile_schorgan.OcorrenciaFormularioActivity;
 import com.example.mobile_schorgan.R;
 import com.example.mobile_schorgan.models.Cliente;
 import com.example.mobile_schorgan.models.Ocorrencia;
 import com.example.mobile_schorgan.ui.clientes.ClienteDialog;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class OcorrenciasDetailActivity extends AppCompatActivity {
 

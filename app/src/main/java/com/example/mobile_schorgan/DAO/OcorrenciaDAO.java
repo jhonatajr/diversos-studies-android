@@ -99,7 +99,7 @@ public class OcorrenciaDAO extends AbstractDAO {
     public int getLastId() {
         String sql = "SELECT * FROM ocorrencia ORDER BY ocrrenciaid DESC;";
         Cursor ponteiro = db.rawQuery(sql, null);
-        if (ponteiro.getCount() > 1) {
+        if (ponteiro.getCount() >= 1) {
             ponteiro.moveToFirst();
             return ponteiro.getInt(ponteiro.getColumnIndex("ocrrenciaid"))+1;
         }

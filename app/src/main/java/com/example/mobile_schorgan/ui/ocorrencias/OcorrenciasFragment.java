@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -12,23 +12,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.mobile_schorgan.DAO.ClienteDAO;
 import com.example.mobile_schorgan.DAO.OcorrenciaDAO;
 import com.example.mobile_schorgan.Mask;
-import com.example.mobile_schorgan.OcorrenciaFormularioActivity;
 import com.example.mobile_schorgan.R;
+import com.example.mobile_schorgan.models.Cliente;
 import com.example.mobile_schorgan.models.Ocorrencia;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -36,8 +36,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class OcorrenciasFragment extends Fragment {
 
@@ -119,8 +117,17 @@ public class OcorrenciasFragment extends Fragment {
         newItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGoForm = new Intent(getActivity(), OcorrenciaFormularioActivity.class);
-                startActivity(intentGoForm);
+                ClienteDAO dao = new ClienteDAO(getContext());
+                List<Cliente> clientes = dao.buscaClientes();
+                if (clientes.size() < 1) {
+                    String msg = "Primeiro cadastre um cliente!";
+                    Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent intentGoForm = new Intent(getActivity(), OcorrenciaFormularioActivity.class);
+                    startActivity(intentGoForm);
+
+                }
             }
         });
 
@@ -159,6 +166,8 @@ public class OcorrenciasFragment extends Fragment {
     @Override
     public void onResume() {
         carregaOcorrencias();
+        switchData.setChecked(false);
+        textInfo.setText("Todos");
         super.onResume();
     }
 
