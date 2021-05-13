@@ -61,6 +61,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
             limpar();
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 

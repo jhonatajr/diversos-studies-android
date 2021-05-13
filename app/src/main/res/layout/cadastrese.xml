@@ -19,24 +19,28 @@
         android:id="@+id/lblmsg1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nome:" />
+        android:text="Nome:"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/txtNomeCad"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:hint="Seu nome..."
         />
 
     <TextView
         android:id="@+id/lblmsg2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="E-mail:" />
 
     <EditText
         android:id="@+id/txtEmailCad"
         android:layout_width="fill_parent"
+        android:hint="Seu e-mail..."
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress" />
 
@@ -44,24 +48,28 @@
         android:id="@+id/lblmsg3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="Senha:" />
 
     <EditText
         android:id="@+id/txtSenhaCad"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:hint="Sua senha..."
         android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/lblmsg4"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="Confirma Senha:" />
 
     <EditText
         android:id="@+id/txtConfSenhaCad"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:hint="Digite novamente sua senha..."
         android:inputType="textPassword" />
 
     <Button

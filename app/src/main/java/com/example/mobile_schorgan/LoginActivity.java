@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (v.getId() == R.id.btnCadastrar) {
             Intent telaCadastreSe = new Intent(this, CadastroUsuarioActivity.class);
             startActivity(telaCadastreSe);
+            finish();
         }
         if (v.getId() == R.id.btnAcessar) {
             consultaUsuarioLogin();
@@ -60,8 +61,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             editor.apply();
             Intent tela = new Intent(this, MenuNavActivity.class);
             startActivity(tela);
+            finish();
         }else{
-            String msg= "Dados não encontrados no sistema, digite outro!!";
+            String msg= "E-mail e senha não encontrados, digite um usuário válido";
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
             limpar();
         }
@@ -70,5 +72,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         txtLogin.setText("");
         txtSenhaLogin.setText("");
         txtLogin.requestFocus();
+    }
+
+    @Override
+    protected void onResume() {
+        txtLogin.setText("");
+        txtSenhaLogin.setText("");
+        super.onResume();
     }
 }
